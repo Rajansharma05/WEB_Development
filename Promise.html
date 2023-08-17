@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Promise Example</title>
+</head>
+<body>
+    <script>
+        var promise = new Promise(function(resolve, reject) {
+            const x = "Hello";
+            const y = "hello";
+            
+            if (x === y)
+                resolve(); // Resolve the promise if x and y are equal
+            else
+                reject();  // Reject the promise if x and y are not equal
+        });
+
+        promise.then(function() {
+            alert('Success'); // This will be executed if the promise is resolved
+        }).catch(function() {
+            alert('Some error has occurred'); // This will be executed if the promise is rejected
+        });
+    </script>
+</body>
+</html>

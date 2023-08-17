@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<h1>Uppercase Name Checker</h2>
+</head>
+<body>
+  <label for="name">Enter Name:</label>
+  <input type="text" id="name" placeholder="Name">
+  <button onclick="checkUppercase()">Check Uppercase</button>
+  <p id="result"></p>
+  
+  <script>
+    function checkUppercase() {
+      var nameInput = document.getElementById('name');
+      var name = nameInput.value;
+      var resultElement = document.getElementById('result');
+      
+      if (name === name.toUpperCase()) {
+        resultElement.textContent = 'Name is in uppercase.';
+      } else {
+        resultElement.textContent = 'Name is not in uppercase.';
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Key-Value Map</title>
+</head>
+<body>
+  <h1>Key-Value Map</h1>
+  
+  <form id="inputForm">
+    <label for="keyInput">Enter Key:</label>
+    <input type="text" id="keyInput" required><br>
+    
+    <label for="valueInput">Enter Value:</label>
+    <input type="text" id="valueInput" required><br>
+    
+    <button type="button" onclick="addKeyValue()">Add Key-Value</button>
+  </form>
+  
+  <h2>Updated Map:</h2>
+  <ul id="mapList">
+    <!-- Map entries will be added here -->
+  </ul>
+
+  <script>
+    let keyValueMap = new Map();
+
+    function addKeyValue() {
+      let keyInput = document.getElementById("keyInput");
+      let valueInput = document.getElementById("valueInput");
+
+      let key = keyInput.value;
+      let value = valueInput.value;
+
+      if (key && value) {
+        keyValueMap.set(key, value);
+        updateMapList();
+        keyInput.value = "";
+        valueInput.value = "";
+      }
+    }
+
+    function updateMapList() {
+      let mapList = document.getElementById("mapList");
+      mapList.innerHTML = "";
+
+      for (let [key, value] of keyValueMap) {
+        let listItem = document.createElement("li");
+        listItem.textContent = `${key}: ${value}`;
+        mapList.appendChild(listItem);
+      }
+    }
+  </script>
+</body>
+</html>
