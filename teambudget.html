@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Team Budget Planner</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f4f4f4;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    form {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #555;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      background-color: #fff;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      margin-bottom: 10px;
+      box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+<body>
+  <h1>Team Budget Planner</h1>
+  
+  <form id="teamForm">
+    <label for="teamName">Team Name:</label>
+    <input type="text" id="teamName" required><br>
+    
+    <label for="expenses">Expenses ($):</label>
+    <input type="number" id="expenses" required><br>
+    
+    <button type="button" onclick="addTeam()">Add Team</button>
+  </form>
+  
+  <h2>Team Budgets:</h2>
+  <ul id="teamList">
+    <!-- Team budgets will be added here -->
+  </ul>
+
+  <script>
+    let teamBudgets = [];
+
+    function addTeam() {
+      let teamNameInput = document.getElementById("teamName");
+      let expensesInput = document.getElementById("expenses");
+
+      let teamName = teamNameInput.value;
+      let expenses = parseFloat(expensesInput.value);
+
+      if (teamName && expenses) {
+        teamBudgets.push({ teamName, expenses });
+        updateTeamList();
+        teamNameInput.value = "";
+        expensesInput.value = "";
+      }
+    }
+
+    function calculateAnnualBudget(expenses) {
+      const monthsInYear = 12;
+      return expenses * monthsInYear;
+    }
+
+    function updateTeamList() {
+      let teamList = document.getElementById("teamList");
+      teamList.innerHTML = "";
+
+      for (let team of teamBudgets) {
+        let listItem = document.createElement("li");
+        listItem.textContent = `${team.teamName}: Annual Budget - $${calculateAnnualBudget(team.expenses)}`;
+        teamList.appendChild(listItem);
+      }
+    }
+  </script>
+</body>
+</html>

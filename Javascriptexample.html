@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <h1>Perform Mathmetical operations</h1>
+<body>
+  <input type="number" id="num1" placeholder="Num 1">
+  <input type="number" id="num2" placeholder="Num 2">
+
+  <button <div class="choice" onclick="AddDiv('addition')"> Click here for Addition</div></button>
+    
+  <button <div class="choice" onclick="AddDiv('division')">Click here for Division</div></body></button> 
+  <div class="result" id="result"></div>
+
+  
+  <script>
+    function AddDiv(operation) {
+      var num1 = parseInt(document.getElementById('num1').value);
+      var num2 = parseInt(document.getElementById('num2').value);
+      let result = 0;
+
+      if (operation === 'addition') {
+        result = num1 + num2;
+      } else if (operation === 'division') {
+        result = num1 / num2;
+      }
+
+      document.getElementById('result').textContent = `Result: ${result}`;
+    }
+
+  </script>
+</body>
+</html>
