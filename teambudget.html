@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Team Budget Planner</title>
+  <link rel="stylesheet" type="text/css" href="team.css">
+
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    /* Add your CSS styling here */
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <a class="navbar-brand" href="#">Team Budget Planner</a>
+        <div class="navbar-nav ml-auto">
+          <a class="nav-item nav-link" href="#welcome-section">Home</a>
+          <a class="nav-item nav-link" href="#teamForm">Contact</a>
+          <a class="nav-item nav-link" href="#teamList">Blog</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <div id="welcome-section" class="container mt-5">
+    <div class="row">
+      <div class="col-md-6">
+        <h2>Welcome to Team Budget Planner</h2>
+        <p>This website allows program managers to manage their team budgets and expenses effectively.</p>
+        <p>Use the form below to add team details and budgets.</p>
+        <button class="btn btn-success mt-3" onclick="showTeamForm()">Get Started</button>
+      </div>
+      <div class="col-md-6">
+        <img src="money.jpg" class="img-fluid" alt="Finance Image">
+      </div>
+    </div>
+  </div>
+  
+  <div id="teamForm" class="container mt-5" style="display: none;">
+    <form>
+      <label for="teamName">Team Name:</label>
+      <input type="text" id="teamName" required><br>
+      
+      <label for="expenses">Expenses ($):</label>
+      <input type="number" id="expenses" required><br>
+      
+      <label for="budget">Annual Budget ($):</label>
+      <input type="number" id="budget" required><br>
+      
+      <button type="button" onclick="addTeam()" class="btn btn-primary">Add Team</button>
+    </form>
+  </div>
+  
+  <div id="teamList" class="container mt-5">
+    <!-- Team budgets will be added here -->
+  </div>
+
+  <script src="team.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

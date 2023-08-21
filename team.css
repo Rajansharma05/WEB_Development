@@ -1,0 +1,96 @@
+/* General styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #96deff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  /* Header styling */
+  header {
+    background-color: #7fdbf7;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    width: 100%;
+  }
+  
+  /* Form and input styling */
+  form {
+    background-image: url("money.jpg");
+    background-color: #e0f5f8;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    border: 2px solid #72dcfc;
+  }
+  
+  /* Input fields */
+  input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ff0000;
+    border-radius: 3px;
+  }
+  
+  /* Add Team button */
+  button {
+    background-color: #9bd2ff;
+    color: #fff;
+    border: royalblue;
+    border-radius: 3px;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #72dcfc00;
+  }
+  
+  /* Team list styling */
+  ul {
+    list-style: repeating-linear-gradient();
+    padding: 0;
+    max-width: 600px;
+    width: 100%;
+  }
+  
+  li {
+    background-color: #88cdfc;
+    padding: 15px;
+    border: 2px solid #4c9bf7;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Welcome section styling */
+  #welcome-section {
+    text-align: center;
+    margin-top: 30px;
+  }
+  
+  /* Display section styling */
+  #teamList {
+    margin-top: 30px;
+  }
+  
+  /* Responsive layout */
+  @media (max-width: 768px) {
+    /* Adjustments for smaller screens */
+    form {
+      padding: 15px;
+    }
+  
+    li {
+      padding: 10px;
+    }
+  }
+  
